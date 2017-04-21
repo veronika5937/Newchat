@@ -4,10 +4,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import '../App.css';
-import Home from './Home';
-import Chats from './chats/Chats';
-import Auth from './auth/Auth';
+import './Header.css';
+import Home from '../Home';
+import Chats from '../chats/Chats';
+import Auth from '../auth/Auth';
 
 
 

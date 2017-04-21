@@ -40,7 +40,7 @@ class Chats extends Component {
 
     sortMessages(messages, id) {
         return messages.filter((message) => {
-            return message.chatId === +id
+            return message.chatId === id
         })
     }
 
