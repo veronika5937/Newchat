@@ -1,6 +1,7 @@
 const initialStore = {
-  chat: [],
+  // chat: [],
   loader: false,
+  register: {},
   login: {},
 };
 

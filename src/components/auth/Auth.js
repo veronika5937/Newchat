@@ -4,8 +4,8 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import Register from './Register';
-import Login from './Login';
+import RegisterContainer from '../../containers/register';
+import LoginContainer from '../../containers/login';
 
 
 
@@ -18,8 +18,8 @@ class Auth extends Component {
             <Link to="/auth/login" className="tab-item">Login</Link>
             <Link to="/auth/register"  className="tab-item">Register</Link>
           </nav>
-          <Route  exact path="/auth/login" component={Login}/>
-          <Route  path="/auth/register" component={Register}/>
+          <Route  exact path="/auth/login" component={LoginContainer}/>
+          <Route  path="/auth/register" component={RegisterContainer}/>
         </div>
       </Router>
     );
