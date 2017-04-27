@@ -7,7 +7,8 @@ import {
 import '../App.css';
 import Home from './Home';
 import Chats from './chats/Chats';
-import Auth from './auth/Auth';
+import Login from './auth/Login';
+import Register from './auth/Register';
 
 
 
@@ -19,18 +20,15 @@ class Header extends Component {
       <Router>
         <div className="wrapper">
           <nav className="main-nav">
-              <Link to="/">Home</Link>
-              <Link to="/chat">Chat</Link>
-              <Link to="/auth/login">Login</Link>
-              <Link to="/auth/register">Register</Link>
+            <Link to="/">Home</Link>
+            <Link to="/chat">Chat</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </nav>
           <Route exact path="/" component={Home} />
-          <Route  path="/chat" component={Chats}/>
-          <Route path="/auth/login" component={Auth}/>
-          <Route path="/auth/register" component={Auth}/>
-        
-             
-         
+          <Route path="/chat" component={Chats} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
         </div>
       </Router>
     );
