@@ -20,7 +20,8 @@ class ChatList extends Component {
     //returns filtered chats
     getListItem(chat) {
         return (
-            <li className="chat-list__item" key={chat.id}  onClick={()=>this.props.func(chat.id)}>
+            <li className="chat-list__item" key={chat.id}  >
+            {/*onClick={()=>this.props.func(chat.id)}*/}
                 <div className="avatar"></div>
                 <div className="chat-list__item__content">
                     <h4>{chat.name}</h4>
