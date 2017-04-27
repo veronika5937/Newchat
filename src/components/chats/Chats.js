@@ -7,10 +7,6 @@ import '../img/face.jpg';
 import io from 'socket.io-client';
 
 export const socket = io.connect('http://eleksfrontendcamp-mockapitron.rhcloud.com:8000');
-// console.log('check 1', socket.connected);
-// socket.on('connect', function() {
-//   console.log('check 2', socket.connected);
-// });
 
 const CHATS = [
     {
@@ -30,61 +26,6 @@ const CHATS = [
         createdAt: '10'
     }
 ]
-// const MESSAGES = [
-//     {
-//         id: 1,
-//         senderId: 1,
-//         isRead: true,
-//         sentAt: 45,
-//         text: 'Hello!',
-//         chatId: 1
-//     },
-//     {
-
-//         id: 2,
-//         senderId: 1,
-//         isRead: true,
-//         sentAt: 20,
-//         text: 'How are you?',
-//         chatId: 1
-//     },
-//     {
-
-//         id: 3,
-//         senderId: 2,
-//         isRead: true,
-//         sentAt: 30,
-//         text: 'Hi man!',
-//         chatId: 1
-//     },
-//     {
-
-//         id: 4,
-//         senderId: 2,
-//         isRead: true,
-//         sentAt: 15,
-//         text: `I'm fine, thanks!`,
-//         chatId: 1
-//     },
-//     {
-
-//         id: 5,
-//         senderId: 3,
-//         isRead: true,
-//         sentAt: 5,
-//         text: `I'll wait you near street at 5 o'clock`,
-//         chatId: 2
-//     },
-//     {
-
-//         id: 6,
-//         senderId: 4,
-//         isRead: true,
-//         sentAt: 3,
-//         text: `Ok, I will be here in 20 minutes!`,
-//         chatId: 2
-//     }
-// ];
 
 class Chats extends Component {
     constructor() {

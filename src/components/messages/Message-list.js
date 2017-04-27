@@ -13,11 +13,11 @@ class MessageList extends Component {
             ];
 
             return (
-                <li className={userId !== message.senderId ? `messages-list__item incoming` : `messages-list__item outgoing`}
+                <li className={localStorage.getItem("username") !== message.user.username  ? `messages-list__item incoming` : `messages-list__item outgoing`}
                     key={key}>
                     <div className="avatar"></div>
                     <p className="messages-list__item__content">{message.msg}
-                        <time>{date.getDay()} {monthNames[date.getMonth()]} {date.getHours()}:{date.getMinutes()}m</time>
+                        <time>{date.getDate()} {monthNames[date.getMonth()]} {date.getHours()}:{date.getMinutes()}m</time>
                     </p>
                 </li>
             );

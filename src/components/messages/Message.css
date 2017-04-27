@@ -34,6 +34,9 @@
     color: #fff;
 }
 
+.incoming .avatar{
+  background: #888 url("../img/face2.jpg") no-repeat center/cover;
+}
 /* Outgoing messages*/
 .outgoing{
   flex-direction: row-reverse;
