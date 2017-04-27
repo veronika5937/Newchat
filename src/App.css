@@ -7,6 +7,13 @@
     overflow: hidden;
 }
 
+.auth-form-wrap{
+  width: 320px;
+  margin: 5% auto;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+
+
 .main-nav{
     display: flex;
     padding: 1rem 4rem;

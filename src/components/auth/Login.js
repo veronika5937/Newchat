@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './Auth.css';
-
+import { Redirect} from 'react-router-dom'
 
 class Login extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
       redirect: false,
-
       credentials: {
         'username': '',
         'password': ''
@@ -27,8 +26,6 @@ class Login extends Component {
 
   loginUser(event) {
     event.preventDefault();
-    // const { username, password } = this.state.credentials;
-
     fetch(new Request('http://eleksfrontendcamp-mockapitron.rhcloud.com/login', {
       method: 'POST',
       headers: { 'Content-type': 'application/json' },
@@ -36,59 +33,44 @@ class Login extends Component {
     }))
       .then(response => response.json())
       .then(user => {
-        console.log(user)
         localStorage.setItem('token', user.token)
-        localStorage.setItem('username', user.user.username)
+        this.setState({redirect: true})
       })
-      .catch(err => console.log(err));
-
+      .catch(err => console.log(err));  
   }
 
-  // logoutUser() {}
-
-  // if (username && password) {
-  //   loginUser(this.state.credentials)
-  //     .then(() => {
-  //       push('/chat');
-  //       hideLoader();
-  //     })
-  //     .catch(err => {
-  //       hideLoader();
-  //       console.error(`Error: ${err}`);
-  //     });
-  // }
-  //   }
-
-
   render() {
+     if (this.state.redirect)  return( <Redirect to='/chat' />);
     return (
-      <form
-        noValidate
-        className="auth-form">
-        <label htmlFor="user-name">User Name
-        <i className="fa fa-envelope"></i>
-        </label>
-        <input type="text"
-          name="username"
-          id="user-name"
-          placeholder="User Name"
-          onChange={this.changeInput('username')}
-          required />
+      <div className="auth-form-wrap">
+        <form
+          noValidate
+          className="auth-form">
+          <label htmlFor="user-name">User Name
+          <i className="fa fa-envelope"></i>
+          </label>
+          <input type="text"
+            name="username"
+            id="user-name"
+            placeholder="User Name"
+            onChange={this.changeInput('username')}
+            required />
 
 
-        <label htmlFor="user-password">Password
-         <i className="fa fa-key"></i>
-        </label>
-        <input type="password"
-          name="password"
-          id="user-password"
-          placeholder="Password"
-          onChange={this.changeInput('password')}
-          required />
+          <label htmlFor="user-password">Password
+          <i className="fa fa-key"></i>
+          </label>
+          <input type="password"
+            name="password"
+            id="user-password"
+            placeholder="Password"
+            onChange={this.changeInput('password')}
+            required />
 
-        <a href="#">Forgot password?</a>
-        <button type="submit" className="form-btn" onClick={this.loginUser}>Log in</button>
-      </form>
+          <a href="#">Forgot password?</a>
+          <button type="submit" className="form-btn" onClick={this.loginUser}>Log in</button>
+        </form>
+      </div>
     );
   }
 }
